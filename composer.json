@@ -1,0 +1,17 @@
+{
+    "name": "admin/rootdir",
+    "autoload": {
+        "psr-4": {
+            "Admin\\Rootdir\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Windel Navales",
+            "email": "windelvlog@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
