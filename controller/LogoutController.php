@@ -1,10 +1,13 @@
 <?php
-session_start(); // Start session if not started
+// Check if session is not already started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Unset all session variables
 $_SESSION = [];
 
-// Destroy session
+// Destroy the session
 session_destroy();
 
 // Remove session cookie
@@ -13,6 +16,6 @@ if (isset($_COOKIE[session_name()])) {
 }
 
 // Redirect to login page
-header("Location: /RootDir/view/login.php"); // Absolute path ensures correct redirection
+header("Location: /RootDir/view/login.php");
 exit;
 ?>

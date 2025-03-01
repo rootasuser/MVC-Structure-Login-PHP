@@ -28,7 +28,7 @@ class LoginController {
 
             // Verify user exists & password is correct
             if ($user && password_verify($password, $user['password'])) {
-                session_regenerate_id(true); // Further prevent session fixation
+                session_regenerate_id(true); // prevent session fixation
 
                 // Set secure session variables
                 $_SESSION['user_id'] = $user['id'];
@@ -55,7 +55,7 @@ class LoginController {
     }
 }
 
-// Initialize and call login function
+// Initialize & call login function
 $loginController = new LoginController();
 $loginController->login();
 ?>

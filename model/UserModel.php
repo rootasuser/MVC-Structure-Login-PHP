@@ -24,7 +24,7 @@ class UserModel {
                 return null; // Return null if user not found
             }
         } else {
-            error_log("Database error: " . $this->conn->error);
+            error_log("DB ERR: " . $this->conn->error);
             return null;
         }
     }
