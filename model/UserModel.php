@@ -11,11 +11,23 @@ class UserModel {
 
     public function getUserByUsername($username) {
         $sql = "SELECT id, firstname, lastname, username, role, password FROM users WHERE username = ?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_assoc();
+        
+        if ($stmt = $this->conn->prepare($sql)) {
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            // Check if user exists
+            if ($user = $result->fetch_assoc()) {
+                return $user;
+            } else {
+                return null; // Return null if user not found
+            }
+        } else {
+            error_log("Database error: " . $this->conn->error);
+            return null;
+        }
     }
+    
 }
 ?>

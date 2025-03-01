@@ -1,4 +1,8 @@
 <?php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_secure', 1); // Enable only on HTTPS
+ini_set('session.use_only_cookies', 1);
+
 session_start();
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
