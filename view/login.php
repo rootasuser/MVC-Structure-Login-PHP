@@ -11,15 +11,13 @@ session_start();
 
     <link rel="stylesheet" href="../public/assets/css/portal.css" />
     
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="../public/assets/js/materialize/css/materialize.min.css">
+    <script src="../public/assets/js/materialize/js/materialize.min.js"></script>
+
     
     <!-- jQuery & Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../public/assets/js/jquery.min.js"></script>
+  
 
     <script>
         $(document).ready(function () {
@@ -40,13 +38,11 @@ session_start();
         <h2>POS SYSTEM PORTAL</h2>
         <form action="../controller/LoginController.php" method="POST">
             <div class="input-field">
-                <i class="material-icons prefix">account_circle</i>
                 <input type="text" name="username" id="username" required>
                 <label for="username">Username</label>
             </div>
 
             <div class="input-field">
-                <i class="material-icons prefix">lock</i>
                 <input type="password" name="password" id="password" required>
                 <label for="password">Password</label>
             </div>

@@ -6,7 +6,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Redirect users based on roles
+$role = $_SESSION['role'] ?? '';
+
 switch ($_SESSION['role']) {
     case 'admin':
         header("Location: ../view/dashboard/");

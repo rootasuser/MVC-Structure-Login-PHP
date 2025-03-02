@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-// If user is not logged in, redirect to login page
 if (!isset($_SESSION['user_id'])) {
     header("Location: view/login.php");
     exit();
 }
 
-// If logged in, redirect based on role (Optional)
 switch ($_SESSION['role']) {
     case 'admin':
         header("Location: view/dashboard/admin.php");

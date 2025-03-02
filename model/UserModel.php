@@ -17,11 +17,10 @@ class UserModel {
             $stmt->execute();
             $result = $stmt->get_result();
             
-            // Check if user exists
             if ($user = $result->fetch_assoc()) {
                 return $user;
             } else {
-                return null; // Return null if user not found
+                return null; 
             }
         } else {
             error_log("DB ERR: " . $this->conn->error);
